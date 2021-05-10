@@ -1,3 +1,3 @@
-class User < ApplicationRecord::Base
-	 self.abstract_class = true
+class User < ApplicationRecord
+	has_many :friends
 end
