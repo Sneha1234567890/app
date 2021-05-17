@@ -57,13 +57,15 @@ class FriendsController < ApplicationController
 
   # DELETE /friends/1 or /friends/1.json
   def destroy
+    #@friend = Freind.find(params[:id])
     @friend.destroy
+
     respond_to do |format|
       format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
       format.json { head :no_content }
+      format.js   { render :layout => false }
     end
   end
-
 
   def download_csv
     @friends = Friend.to_csv

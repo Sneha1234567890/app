@@ -12,16 +12,3 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).ready(function(){
-	$('.destroy').on('click', function(){
-		$.ajax({
-			url: '/friends' + this.parentElement.id,
-			type: 'DELETE',
-			success: function(r){
-
-			}
-
-		});
-
-	});
-})
