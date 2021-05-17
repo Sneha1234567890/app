@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'home/about'
   root 'home#index'
   get 'home/contacts'
-  get "/fetch_items" => 'items#from_category', as: 'fetch_items'
+  #get 'home/item'
+  #get "/fetch_items" => 'items#from_category', as: 'fetch_items'
   resources :contacts
   #root 'welcome#index'
   post 'download_csv', to: "friends#download_csv"
