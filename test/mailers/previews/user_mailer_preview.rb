@@ -1,6 +1,9 @@
 class UserMailerPreview < ActionMailer::Preview
-  def welcome_email
-    UserMailer.with(user: User.first).welcome_email
+ 
+  def signup_confirmation
+    UserMailer(user: User.first).signup_confirmation
   end
+
+
 end
 

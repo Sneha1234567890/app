@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   #get 'home/index'
   get 'home/about'
   root 'home#index'
-  root 'welcome#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'home/contacts'
+  #get 'home/item'
+  #get "/fetch_items" => 'items#from_category', as: 'fetch_items'
+  resources :contacts
+  #root 'welcome#index'
   post 'download_csv', to: "friends#download_csv"
 end

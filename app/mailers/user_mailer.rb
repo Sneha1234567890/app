@@ -1,13 +1,11 @@
-class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
 
-  def welcome_email
-    @user = params[:user]
-    @url  = 'http://example.com/login'
-    mail(to: @user.email,
-         subject: 'Welcome to My Awesome Site') do |format|
-      format.html { render 'another_template' }
-      format.text { render plain: 'Render text' }
-    end
+
+class UserMailer < ActionMailer::Base
+  default from: "railscasts@example.com"
+
+  def signup_confirmation(user)
+    @user = user
+    mail to: user.email, subject: "Sign Up Confirmation"
   end
 end
+
