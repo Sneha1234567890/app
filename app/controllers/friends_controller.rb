@@ -9,6 +9,7 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render json: UsersDatatable.new(view_context) }
     end
   end
 
@@ -63,7 +64,7 @@ class FriendsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
       format.json { head :no_content }
-      format.js   { render :layout => false }
+      format.js   
     end
   end
 

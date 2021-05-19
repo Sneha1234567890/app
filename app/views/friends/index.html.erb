@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Download CSV", download_csv_path(format: "csv"), method: "POST" %>
+<%#<%= link_to "Download CSV", download_csv_path(format: "csv"), method: "POST" %>
 
-<table  class="table table-striped table-hover table-bordered">
+<%= content_tag :table, role: :datatable, data: { url: friends_path(format: :json)} do %>
+  <thead>...</thead>
+  <tbody></tbody>
+<% end %>
+
+
+<table class="table table-striped table-hover table-bordered", role='datatable'>
   <thead class="table-dark">
     <tr>
       <th>First name</th>

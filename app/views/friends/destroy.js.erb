@@ -4,3 +4,5 @@ $('.destroy').bind('ajax:success', function()
    $(this).closest('tr').fadeOut();
 }
 );
+
+$('#comments ul.comments').append("<%= j render(:partial => 'comments/foobar') %>");
